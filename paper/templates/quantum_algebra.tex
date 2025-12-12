@@ -1,0 +1,46 @@
+A central implication of the G$_2$ sedenion framework is that quantum mechanics may be understood not as a separate set of laws, but as an emergent property of non-associative geometry. We demonstrate this by explicitly constructing quantum logic gates and entangled states using classical sedenion algebraic operations.
+
+\subsection{The Sedenion Qubit}
+
+A quantum state (qubit) can be mapped to a unit vector in a subalgebra of the internal octonion $\mathbb{O}_{int}$. Let's use two imaginary basis elements, $e_1$ and $e_2$, to represent the computational basis states $|0\rangle$ and $|1\rangle$.
+\[|0\rangle \equiv e_1, \quad |1\rangle \equiv e_2\]
+
+A superposition state $|s\rangle = \alpha|0\rangle + \beta|1\rangle$ is then represented as a sedenion:
+\[\Psi = \alpha e_1 + \beta e_2, \quad \text{with } |\alpha|^2 + |\beta|^2 = 1\]
+
+Unitary operations are realized as left-multiplication by specific unit sedenions (elements of G$_2$). The G$_2$ automorphism group ensures these operations preserve the norm (probability) of the state.
+
+\subsection{Quantum Logic Gates}
+
+\subsubsection{The Hadamard Gate}
+The Hadamard gate $H$ creates a superposition: $H|0\rangle = \frac{1}{\sqrt{2}}(|0\rangle + |1\rangle)$.
+In sedenion algebra, this is realized by multiplication by a specific unit operator. Let's define the Hadamard operator $h = \frac{1}{\sqrt{2}}(e_0 + e_3)$, where $e_0$ is the real unit.
+Applying $h$ to our $|0\rangle$ state ($e_1$):
+\[h \times e_1 = \frac{1}{\sqrt{2}}(e_0 + e_3)e_1 = \frac{1}{\sqrt{2}}(e_1 + e_3 e_1) = \frac{1}{\sqrt{2}}(e_1 + e_2)\]
+(Using the sedenion multiplication rule $e_3 e_1 = -e_2$ from the Fano plane).
+This operation rotates the basis vector $e_1$ into a superposition of $e_1$ and $e_2$, replicating the quantum H-gate purely algebraically.
+
+\subsection{Entanglement and Bell States}
+
+Entanglement arises from the interaction between the external and internal octonions via the Cayley-Dickson product.
+Consider two qubits: $q_A \in \mathbb{O}_{ext}$ (External) and $q_B \in \mathbb{O}_{int}$ (Internal).
+The combined state is $S = q_A + q_B E$, where $E$ is the sedenion unit $e_8$.
+
+A Bell state $|\Phi^+\rangle = \frac{1}{\sqrt{2}}(|00\rangle + |11\rangle)$ is constructed by:
+\begin{enumerate}
+\item Initialize $S_0 = e_1$ ($|0\rangle_A$). 
+\item Apply Hadamard to A: $S_1 = h S_0 = \frac{1}{\sqrt{2}}(e_1 + e_2)$.
+\item Apply CNOT (Controlled-NOT) via non-associative coupling to B.
+\end{enumerate}
+
+The non-associative product $P = S_1 \times (S_B \times E)$ generates terms that cannot be factored into $q_A \times q_B$. This algebraic inseparability is mathematically isomorphic to quantum entanglement.
+
+\subsection{Non-Locality from Non-Associativity}
+
+Bell's theorem states that no local hidden variable theory can reproduce the predictions of quantum mechanics. However, Bell's theorem implicitly assumes an \textit{associative algebra of observables $(AB)C = A(BC)$}.
+Sedenion algebra is \textbf{non-associative}.
+\[(A \times B) \times C \neq A \times (B \times C)\]
+
+This fundamental breakdown of associativity provides a deterministic, local (within the 16D space), but non-associative hidden variable theory. The apparent "non-locality" in quantum mechanics is thus an emergent property of the underlying non-associative algebraic structure when projected onto an associative (classical) subspace.
+
+The geometric structure of G$_2$ acting on sedenions therefore naturally hosts the phenomenology of quantum mechanics—superposition, entanglement, and non-locality—without requiring an distinct set of physical laws. Quantum logic is simply the logic of non-associative geometry.

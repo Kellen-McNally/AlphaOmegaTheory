@@ -1,0 +1,64 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+*.log
+
+# Virtual environments
+venv/
+env/
+ENV/
+test_venv/
+.venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# LaTeX Build Artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# Generated PDFs (Ignore working copies, keep deliverables)
+paper/*.pdf
+!paper/aomega_paper_single.pdf
+security/*.pdf
+!security/alphaomega_security_whitepaper.pdf
+
+# Checkpoints and training artifacts
+checkpoints*/
+models/
+results/*.npy
+*.pt
+
+# Temporary files
+*.tmp
+fix_*.py
+move_*.py
+update_abstract.py
+
+# Generated diagrams (commit source, not generated)
+diagrams/generated/

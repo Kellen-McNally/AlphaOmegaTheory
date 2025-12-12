@@ -1,0 +1,69 @@
+Fermion masses arise from Yukawa couplings: $m_f = Y_f v$ where $v = {{ v_higgs_pred }}$ GeV.
+The Standard Model's 12 fermion masses span 6 orders of magnitude. 
+The G$_2$ framework derives these couplings from the geometry of the compactification manifold.
+
+\begin{figure}[h]
+\centering
+\includegraphics[width=0.8\textwidth]{figures/fermion_mass_ladder.pdf}
+\caption{Fermion Mass Ladder from G$_2$ Geometry. The hierarchy is determined by the cubic Casimir $C_3$ and triality $\tau$.}
+\label{fig:fermion_mass_ladder}
+\end{figure}
+
+\subsection{Lepton Sector}
+
+The charged lepton Yukawas scale with powers of $\alpha_{GUT}$.
+
+\paragraph{Tau Lepton}
+\begin{equation}
+Y_\tau = \tau \alpha_{GUT} \frac{\dim^2 + \text{rank}}{10 \dim^2} = {{ ytau_fmt }}
+\end{equation}
+Predicted mass: ${{ tau_mass_pred }}$ GeV (Exp: $1.777$ GeV, Error: {{ tau_err_pct }} %).
+
+\paragraph{Muon}
+\begin{equation}
+Y_\mu = \alpha_{GUT}^2 \frac{2 C_3}{2 \dim + 1} = {{ ymu_fmt }}
+\end{equation}
+Predicted mass: ${{ muon_mass_pred_mev }}$ MeV (Exp: $105.7$ MeV, Error: {{ muon_err_pct }} %).
+
+\paragraph{Electron}
+\begin{equation}
+Y_e = \alpha_{GUT}^2 \frac{C_3 - 1}{\dim^3} = {{ ye_fmt }}
+\end{equation}
+Predicted mass: ${{ electron_mass_pred_mev }}$ MeV (Exp: $0.511$ MeV, Error: {{ electron_err_pct }} %).
+
+\subsection{Quark Sector}
+
+Quark Yukawa couplings include geometric correction factors $(1 \pm \delta)$ representing first-order quantum corrections.
+
+\paragraph{Light Quarks ($u, d$)}
+Light quarks scale as $\alpha_{GUT}^3$:
+\begin{align}
+Y_d &= \alpha_{GUT}^3 \frac{\tau+\text{rank}}{\dim} \frac{C_2}{1+\alpha_{GUT}} \\
+Y_u &= \alpha_{GUT}^3 \frac{C_3-\text{rank}}{\dim} \left(1 + \frac{\alpha_{GUT}}{\text{rank}}\right)
+\end{align}
+
+\paragraph{Heavy Quarks ($s, c, b$)}
+Heavy quarks scale as $\alpha_{GUT}$ with geometric corrections:
+\begin{align}
+Y_b &= \alpha_{GUT} \frac{\dim^2-\text{rank}}{2\dim^2} (1 - \alpha_{GUT}) \\
+Y_c &= \alpha_{GUT} \frac{2C_3}{\dim^2} (1 - \alpha_{GUT} \cdot \text{rank}) \\
+Y_s &= \alpha_{GUT} \frac{\tau}{\dim^2} (1 + \alpha_{GUT} \cdot \text{rank})
+\end{align}
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{lccc}
+\hline\hline
+Quark & Predicted Mass & Observed (Scale) & Error \\
+\hline
+Down & ${{ m_d_pred_fmt }}$ MeV & $4.67$ MeV & {{ m_d_err_fmt }}\% \\
+Up & ${{ m_u_pred_fmt }}$ MeV & $2.16$ MeV & {{ m_u_err_fmt }}\% \\
+Strange & ${{ m_s_pred_fmt }}$ MeV & $93.4$ MeV & {{ m_s_err_fmt }}\% \\
+Charm & ${{ m_c_pred_fmt }}$ GeV & $0.62$ GeV & {{ m_c_err_fmt }}\% \\
+Bottom & ${{ m_b_pred_fmt }}$ GeV & $2.82$ GeV & {{ m_b_err_fmt }}\% \\
+Top & ${{ m_t_pred_fmt }}$ GeV & $172.8$ GeV & {{ m_t_err_fmt }}\% \\
+\hline\hline
+\end{tabular}
+\caption{Quark mass predictions vs. experimental values (at respective scales).}
+\end{table}
