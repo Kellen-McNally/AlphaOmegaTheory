@@ -110,7 +110,21 @@ def run_simulation():
     print(f"Results:\n  Max Baryonic Velocity:    {np.max(v_baryonic):.2f} km/s\n  Max Dark Matter Velocity: {np.max(v_nfw):.2f} km/s\n  Max Total Velocity:       {np.max(v_total):.2f} km/s")
     print("SUCCESS: Galaxy rotation curve simulated.")
     if _MATPLOTLIB_AVAILABLE:
-        print("Output saved to 'galaxy_rotation_curve.png'.")
+        try:
+            plt.figure(figsize=(10, 6))
+            plt.plot(r_values, v_baryonic, label='Baryonic (Disk + Bulge)', linestyle='--')
+            plt.plot(r_values, v_nfw, label='Dark Matter (NFW)', linestyle=':')
+            plt.plot(r_values, v_total, label='Total Rotation Curve', linewidth=2, color='black')
+            plt.xlabel('Radius (kpc)')
+            plt.ylabel('Velocity (km/s)')
+            plt.title('Galaxy Rotation Curve: Baryonic vs Dark Matter')
+            plt.legend()
+            plt.grid(True, alpha=0.3)
+            plt.savefig('galaxy_rotation_curve.png')
+            plt.close()
+            print("Output saved to 'galaxy_rotation_curve.png'.")
+        except Exception as e:
+            print(f"Error generating plot: {e}", file=sys.stderr)
     else:
         print("Skipping plot generation due to missing matplotlib.", file=sys.stderr)
 

@@ -5,6 +5,7 @@ Tests for Novel Predictions related derivations.
 import subprocess
 import pytest
 import os
+import sys
 import numpy as np
 
 # Test for physics/particles/proton_decay/proton_lifetime.py
@@ -12,9 +13,8 @@ def test_proton_lifetime_runs_and_accuracy():
     """Verify that particle_proton_decay.py runs and predicts the correct lifetime."""
     try:
         result = subprocess.run(
-            ['python3', 'physics/particle_proton_decay.py'],
-            capture_output=True, text=True, check=True,
-            env={**os.environ, 'PYTHONPATH': os.environ.get('PYTHONPATH', '') + ':' + '/home/kfm0/.local/lib/python3.12/site-packages'}
+            [sys.executable, 'physics/particle_proton_decay.py'],
+            capture_output=True, text=True, check=True
         )
         assert "SUCCESS: Proton lifetime and A_H are self-consistent within the geometric framework." in result.stdout
         
@@ -43,9 +43,8 @@ def test_gravitational_waves_runs():
             os.remove('geometric_bremsstrahlung_spectrum.png')
             
         result = subprocess.run(
-            ['python3', 'physics/cosmo_gravity.py'],
-            capture_output=True, text=True, check=True,
-            env={**os.environ, 'PYTHONPATH': os.environ.get('PYTHONPATH', '') + ':' + '/home/kfm0/.local/lib/python3.12/site-packages'}
+            [sys.executable, 'physics/cosmo_gravity.py'],
+            capture_output=True, text=True, check=True
         )
         # Since matplotlib might be broken in the test env (as seen before), 
         # the script might not produce the plot but should run successfully.

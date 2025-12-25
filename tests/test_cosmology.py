@@ -5,6 +5,7 @@ Tests for Cosmology related derivations.
 import subprocess
 import pytest
 import os
+import sys
 import numpy as np
 # from unittest.mock import MagicMock, patch # No longer needed for this test
 
@@ -17,9 +18,8 @@ def test_dark_matter_dynamics_runs():
             os.remove('galaxy_rotation_curve.png') 
             
         result = subprocess.run(
-            ['python3', 'physics/cosmo_dark_matter.py'],
-            capture_output=True, text=True, check=True,
-            env={**os.environ, 'PYTHONPATH': os.environ.get('PYTHONPATH', '') + ':' + '/home/kfm0/.local/lib/python3.12/site-packages'}
+            [sys.executable, 'physics/cosmo_dark_matter.py'],
+            capture_output=True, text=True, check=True
         )
         assert "SUCCESS: Galaxy rotation curve simulated." in result.stdout
         
@@ -39,9 +39,8 @@ def test_einstein_hilbert_runs():
     """Verify that cosmo_gravity.py runs without errors and articulates the GR derivation."""
     try:
         result = subprocess.run(
-            ['python3', 'physics/cosmo_gravity.py'],
-            capture_output=True, text=True, check=True,
-            env={**os.environ, 'PYTHONPATH': os.environ.get('PYTHONPATH', '') + ':' + '/home/kfm0/.local/lib/python3.12/site-packages'}
+            [sys.executable, 'physics/cosmo_gravity.py'],
+            capture_output=True, text=True, check=True
         )
         assert "SUCCESS: The Einstein-Hilbert action emerges from the Sedenion curvature term." in result.stdout
         assert result.returncode == 0
@@ -53,9 +52,8 @@ def test_equilibrium_state_runs_and_values():
     """Verify that cosmo_equilibrium.py runs and calculates correct H_eq and T_eq."""
     try:
         result = subprocess.run(
-            ['python3', 'physics/cosmo_equilibrium.py'],
-            capture_output=True, text=True, check=True,
-            env={**os.environ, 'PYTHONPATH': os.environ.get('PYTHONPATH', '') + ':' + '/home/kfm0/.local/lib/python3.12/site-packages'}
+            [sys.executable, 'physics/cosmo_equilibrium.py'],
+            capture_output=True, text=True, check=True
         )
         assert "SUCCESS: Equilibrium state properties (H_eq, T_eq) calculated based on geometric constants." in result.stdout
         

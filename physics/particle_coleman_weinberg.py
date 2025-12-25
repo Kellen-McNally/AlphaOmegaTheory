@@ -12,7 +12,7 @@ import sys
 import os
 
 # Ensure we can import from core
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from core.octonion_algebra import generate_multiplication_table
 from core.constants import CASIMIR_C2_G2

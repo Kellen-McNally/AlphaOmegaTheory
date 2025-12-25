@@ -10,7 +10,7 @@ import sys
 import os
 
 # Ensure we can import from core
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from core.constants import HBAR, GEV_TO_ERG, M_PROTON_GEV_MEASURED, ALPHA_GUT, M_PROTON_DECAY, CASIMIR_C3_G2
 

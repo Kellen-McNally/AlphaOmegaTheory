@@ -8,14 +8,16 @@ and Vacuum Stability.
 import sys
 import os
 import numpy as np
-from pathlib import Path # Added this import
+from pathlib import Path
+from typing import Dict, List, Tuple
 from scipy.integrate import quad
 from scipy.optimize import minimize_scalar
 
 from core.constants import (
     C_LIGHT, M_PLANCK_GEV, OMEGA_LAMBDA, DIM_G2, CASIMIR_C3_G2,
     CASIMIR_C2_G2, H0_KM_S_MPC, TRIALITY, RANK_G2,
-    OMEGA_LAMBDA_EXP, OMEGA_LAMBDA_ERR
+    OMEGA_LAMBDA_EXP, OMEGA_LAMBDA_ERR,
+    T_CURRENT_GYR, T_EQUILIBRIUM_GYR, M_HIGGS_MEASURED, V_HIGGS_MEASURED
 )
 from utils.logging_config import get_logger, configure_for_cli
 

@@ -61,4 +61,6 @@ move_*.py
 update_abstract.py
 
 # Generated diagrams (commit source, not generated)
-diagrams/generated/
+diagrams/generated/output/
+*.png
+CURRENT_TASK.md

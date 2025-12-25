@@ -10,7 +10,7 @@ import sys
 import os
 
 # Ensure we can import from core
-sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '../../')))
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from core.octonion_algebra import generate_multiplication_table
 from physics.particle_group_embedding import generate_g2_generators, identify_su3_subgroup, _SCIPY_LINALG_AVAILABLE
